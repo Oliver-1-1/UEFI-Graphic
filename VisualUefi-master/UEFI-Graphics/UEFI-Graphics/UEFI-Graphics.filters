@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Graphics\Graphics.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="General.c" />
+    <ClCompile Include="Misc.cpp" />
+    <ClCompile Include="Graphics\Drawable.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\Screen.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\Shapes\Mouse.cpp">
+      <Filter>Graphics\Shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\Shapes\Rectangle.cpp">
+      <Filter>Graphics\Shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\Transformable.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\Shapes\Circle.cpp">
+      <Filter>Graphics\Shapes</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Graphics">
+      <UniqueIdentifier>{fc07d3fa-e3ef-4579-a851-9e77eb0403a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics\Shapes">
+      <UniqueIdentifier>{af639081-6d5d-4e62-964c-2cd4cb5db048}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Graphics\Graphics.hpp">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="General.h" />
+    <ClInclude Include="Graphics\Drawable.hpp">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\Screen.hpp">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\Shapes\Mouse.hpp">
+      <Filter>Graphics\Shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\Shapes\Rectangle.hpp">
+      <Filter>Graphics\Shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\Transformable.hpp">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\Shapes\Circle.hpp">
+      <Filter>Graphics\Shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\Color.hpp">
+      <Filter>Graphics\Shapes</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
