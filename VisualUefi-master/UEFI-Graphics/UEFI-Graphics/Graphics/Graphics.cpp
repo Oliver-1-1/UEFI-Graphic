@@ -4,25 +4,16 @@ VOID Graphics::Render() const {
 	const auto status = gop_->Blt(gop_, blt_buffer_, ::EfiBltBufferToVideo, 0, 0, 0, 0, screen_x_size_, screen_y_size_, 0);
 }
 
-VOID Graphics::DrawRectangle(UINTN x, UINTN y, UINTN width, UINTN height, Color color) const {
-	if ((x + width) > screen_x_size_ || x < 0) {
-		printf(L"Too large writing buffer in DrawRectangle. X\n");
-		return;
-	}
-	if ((y + height) > screen_y_size_ || y < 0) {
-		printf(L"Too large writing buffer in DrawRectangle. Y\n");
-		return;
-	}
-
+VOID Graphics::DrawRectangle(INTN x, INTN y, UINTN width, UINTN height, Color color) const {
 	for (int i = 0; i < width; i++) {
 		for (int j = 0; j < height; j++) {
-			blt_buffer_[screen_x_size_ * (j + y) + (i + x)] = EFI_GRAPHICS_OUTPUT_BLT_PIXEL{ color.Get().Blue, color.Get().Green, color.Get().Red, color.Get().Reserved };
+			DrawPixel(x+i, y+j, color);
 		}
 	}
 
 }
 
-Graphics::Graphics(UINT32 screen_x_size, UINT32 screen_y_size) : oldx_(screen_x_size / 2), oldy_(screen_y_size / 2), screen_x_size_(screen_x_size), screen_y_size_(screen_y_size) {
+Graphics::Graphics(UINTN screen_x_size, UINTN screen_y_size) : oldx_(screen_x_size / 2), oldy_(screen_y_size / 2), screen_x_size_(screen_x_size), screen_y_size_(screen_y_size) {
 	const EFI_STATUS st = gBS->LocateProtocol(&gEfiGraphicsOutputProtocolGuid, NULL, reinterpret_cast<void**>(&gop_));
 	if (EFI_ERROR(st)) {
 		printf(L"Could not find protocol graph.\n");
@@ -32,13 +23,13 @@ Graphics::Graphics(UINT32 screen_x_size, UINT32 screen_y_size) : oldx_(screen_x_
 	blt_buffer_ = new EFI_GRAPHICS_OUTPUT_BLT_PIXEL[screen_x_size * screen_y_size];
 }
 
-VOID Graphics::DrawPixel(UINTN x, UINTN y, Color color) const{
+VOID Graphics::DrawPixel(INTN x, INTN y, Color color) const{
 	if (x > screen_x_size_ || x < 0) {
-		printf(L"Too large writing buffer in DrawRectangle. X\n");
+		//printf(L"Too large writing buffer in DrawRectangle. X\n");
 		return;
 	}
 	if (y > screen_y_size_ || y < 0) {
-		printf(L"Too large writing buffer in DrawRectangle. Y\n");
+		//printf(L"Too large writing buffer in DrawRectangle. Y\n");
 		return;
 	}
 	blt_buffer_[screen_x_size_ * y + x] = EFI_GRAPHICS_OUTPUT_BLT_PIXEL{ color.Get().Blue, color.Get().Green, color.Get().Red, color.Get().Reserved };

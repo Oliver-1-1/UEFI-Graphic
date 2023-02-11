@@ -13,9 +13,6 @@
     <ClCompile Include="Graphics\Graphics.cpp">
       <Filter>Graphics</Filter>
     </ClCompile>
-    <ClCompile Include="Graphics\Shapes\Mouse.cpp">
-      <Filter>Graphics\Shapes</Filter>
-    </ClCompile>
     <ClCompile Include="Graphics\Shapes\Rectangle.cpp">
       <Filter>Graphics\Shapes</Filter>
     </ClCompile>
@@ -24,6 +21,12 @@
     </ClCompile>
     <ClCompile Include="Graphics\Screen.cpp">
       <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\File.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\Shapes\Text.cpp">
+      <Filter>Graphics\Shapes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -37,9 +40,6 @@
     <ClInclude Include="Graphics\Graphics.hpp">
       <Filter>Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="Graphics\Shapes\Mouse.hpp">
-      <Filter>Graphics\Shapes</Filter>
-    </ClInclude>
     <ClInclude Include="Graphics\Shapes\Rectangle.hpp">
       <Filter>Graphics\Shapes</Filter>
     </ClInclude>
@@ -52,6 +52,12 @@
     <ClInclude Include="Graphics\Screen.hpp">
       <Filter>Graphics</Filter>
     </ClInclude>
+    <ClInclude Include="Utils\File.hpp">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\Shapes\Text.hpp">
+      <Filter>Graphics\Shapes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Graphics">
@@ -59,6 +65,9 @@
     </Filter>
     <Filter Include="Graphics\Shapes">
       <UniqueIdentifier>{95e7aefc-8590-427e-9ca4-e9e9993f6891}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{0901b3b1-ff96-407d-b0f6-0ade2ba0cbc8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

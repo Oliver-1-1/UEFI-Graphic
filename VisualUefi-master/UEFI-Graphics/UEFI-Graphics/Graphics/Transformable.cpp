@@ -1,30 +1,26 @@
 #include "Transformable.hpp"
 
-UINTN Transformable::GetSizeX() const
-{
+UINTN Transformable::GetSizeX() const{
 	return size_x_;
 }
 
-UINTN Transformable::GetSizeY() const
-{
+UINTN Transformable::GetSizeY() const{
 	return size_y_;
 }
 
-UINTN Transformable::GetPosX() const
-{
+INTN Transformable::GetPosX() const{
 	return pos_x_;
 }
 
-UINTN Transformable::GetPosY() const
-{
+INTN Transformable::GetPosY() const{
 	return pos_y_;
 }
 
-VOID Transformable::SetPosX(UINTN x){
+VOID Transformable::SetPosX(INTN x){
 	pos_x_ = x;
 }
 
-VOID Transformable::SetPosY(UINTN y){
+VOID Transformable::SetPosY(INTN y){
 	pos_y_ = y;
 }
 
@@ -40,3 +36,4 @@ VOID Transformable::Move(INTN x, INTN y){
 	pos_x_ += x;
 	pos_y_ += y;
 }
+

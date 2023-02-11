@@ -1,6 +1,6 @@
 #include "Circle.hpp"
 
-Circle::Circle(UINTN x, UINTN y, UINTN radius, Color color) {
+Circle::Circle(INTN x, INTN y, UINTN radius, Color color) {
 	SetPosX(x);
 	SetPosY(y);
 	SetColor(color);

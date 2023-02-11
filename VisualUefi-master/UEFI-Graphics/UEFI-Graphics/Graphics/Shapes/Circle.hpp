@@ -2,12 +2,12 @@
 #include "../Graphics.hpp"
 #include "../Drawable.hpp"
 #include "../Transformable.hpp"
-class Circle final : public Drawable, public Transformable{
+class Circle : public Drawable, public Transformable{
 public:
-	Circle(UINTN x, UINTN y, UINTN radius, Color color);
+	Circle(INTN x, INTN y, UINTN radius, Color color);
 	VOID Draw(Graphics& g) override;
-	VOID SetSizeX(UINTN x) override;
-	VOID SetSizeY(UINTN y) override;
+	VOID SetSizeX(UINTN radius) override;
+	VOID SetSizeY(UINTN radius) override;
 
 	VOID SetRadius(UINTN radius);
 	UINTN GetRadius() const;
