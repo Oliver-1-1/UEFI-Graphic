@@ -25,8 +25,8 @@ CAPI EFI_STATUS EFIAPI UefiMain(IN EFI_HANDLE ImageHandle,IN EFI_SYSTEM_TABLE* S
   s.ClearBackground(Color::BLUE);
   s.Render(t);
   s.Render(c);
-	s.Render(r);
-	s.Render(t1);
+  s.Render(r);
+  s.Render(t1);
 
     
   return efi_status
