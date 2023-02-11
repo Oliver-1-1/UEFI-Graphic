@@ -11,7 +11,6 @@ Visual-efi is used for development environment
 CAPI EFI_STATUS EFIAPI UefiMain(IN EFI_HANDLE ImageHandle,IN EFI_SYSTEM_TABLE* SystemTable){
   constexpr EFI_STATUS efi_status = EFI_SUCCESS;
     
-
   Text t(50, 50, 2, Color::WHITE, (CHAR8*)"UEFI is fun but a pain in the ass.", (CHAR16*) L"font.fnt");
   Text t1(175, 100, 1, Color::WHITE, (CHAR8*)"LMAO what is this. Zepta.....", (CHAR16*)L"font.fnt");
 
@@ -19,8 +18,6 @@ CAPI EFI_STATUS EFIAPI UefiMain(IN EFI_HANDLE ImageHandle,IN EFI_SYSTEM_TABLE* S
   Rectangle r(350, 500, 50, 50, Color::GREEN);
 
   Screen s(800, 600);
-
- 
  
   s.ClearBackground(Color::BLUE);
   s.Render(t);
@@ -28,7 +25,6 @@ CAPI EFI_STATUS EFIAPI UefiMain(IN EFI_HANDLE ImageHandle,IN EFI_SYSTEM_TABLE* S
   s.Render(r);
   s.Render(t1);
 
-    
   return efi_status
 }
 ```
