@@ -4,10 +4,11 @@ Visual-efi is used for development environment
 
 The project will support:
 1. Basic shapes                // Done
-2. Basic transform of shapes   // Done. Might want to add rotation
-3. Basic file managment        // Done
-4. Basic internet connectivity // Not started
-5. Basic mouse support         // Almost done 
+2. Basic text                  // Done
+3. Basic transform of shapes   // Done. Might want to add rotation
+4. Basic file managment        // Done
+5. Basic internet connectivity // Not started
+6. Basic mouse support         // Almost done 
 
 ## Usage
 
