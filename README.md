@@ -2,6 +2,12 @@
 UEFI-Graphic brings graphics to UEFI in a simple way and it is written in C++. 
 Visual-efi is used for development environment
 
+The project will support:
+1. Basic shapes                // Done
+2. Basic transform of shapes   // Done. Might want to add rotation
+3. Basic file managment        // Done
+4. Basic internet connectivity // Not started
+5. Basic mouse support         // Almost done 
 
 ## Usage
 
@@ -31,6 +37,6 @@ CAPI EFI_STATUS EFIAPI UefiMain(IN EFI_HANDLE ImageHandle,IN EFI_SYSTEM_TABLE* S
 
 ## Images
 
-This picture shows the result of about code. It all looks like it came from the 90s but it mostly has to do with the font.
+This picture shows the result of above code. It all looks like it came from the 90s but it mostly has to do with the font.
 
 ![](https://cdn.discordapp.com/attachments/865269282903162913/1073791181814779985/image.png)
