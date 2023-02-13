@@ -5,11 +5,12 @@ Visual-efi is used for development environment
 The project will support:
 1. Basic shapes                // Done
 2. Basic text                  // Done
-3. Basic transform of shapes   // Done. Might want to add rotation
+3. Basic mouse support         // Done
 4. Basic file managment        // Done
-5. Basic internet connectivity // Not started
-6. Basic mouse support         // Almost done 
+5. Basic transform of shapes   // Done.
+6. Basic internet connectivity // Not started
 
+Might want to add rotation to transform. The issue is i cant seem to get float support to work.
 ## Usage
 
  It has a very simple usage and abstracts all the protocol and buffer searching that is essential for UEFI.
