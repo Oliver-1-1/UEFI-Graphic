@@ -28,6 +28,12 @@
     <ClCompile Include="Graphics\Shapes\Text.cpp">
       <Filter>Graphics\Shapes</Filter>
     </ClCompile>
+    <ClCompile Include="Network\Tcp.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\Mouse.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="General.h" />
@@ -58,6 +64,12 @@
     <ClInclude Include="Graphics\Shapes\Text.hpp">
       <Filter>Graphics\Shapes</Filter>
     </ClInclude>
+    <ClInclude Include="Network\Tcp.hpp">
+      <Filter>Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Mouse.hpp">
+      <Filter>Utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Graphics">
@@ -68,6 +80,9 @@
     </Filter>
     <Filter Include="Utils">
       <UniqueIdentifier>{0901b3b1-ff96-407d-b0f6-0ade2ba0cbc8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Network">
+      <UniqueIdentifier>{94640072-b309-4e1c-80cc-2f8059e3d411}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

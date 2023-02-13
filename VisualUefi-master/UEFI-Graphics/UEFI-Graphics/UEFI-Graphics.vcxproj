@@ -43,7 +43,9 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="General.c" />
     <ClCompile Include="Misc.cpp" />
+    <ClCompile Include="Network\Tcp.cpp" />
     <ClCompile Include="Utils\File.cpp" />
+    <ClCompile Include="Utils\Mouse.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="General.h" />
@@ -55,6 +57,8 @@
     <ClInclude Include="Graphics\Shapes\Rectangle.hpp" />
     <ClInclude Include="Graphics\Shapes\Text.hpp" />
     <ClInclude Include="Graphics\Transformable.hpp" />
+    <ClInclude Include="Network\Tcp.hpp" />
     <ClInclude Include="Utils\File.hpp" />
+    <ClInclude Include="Utils\Mouse.hpp" />
   </ItemGroup>
 </Project>

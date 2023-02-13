@@ -7,11 +7,6 @@ extern "C" {
 	#include <Protocol/GraphicsOutput.h>
 }
 
-struct Point{
-	int x;
-	int y;
-};
-
 class Graphics {
 public:
 	Graphics(UINTN screen_x_size, UINTN screen_y_size);

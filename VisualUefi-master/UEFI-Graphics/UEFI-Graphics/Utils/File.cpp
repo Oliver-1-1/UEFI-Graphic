@@ -5,7 +5,7 @@ File::File(const CHAR16* path){
 
 }
 
-VOID* File::Read(UINTN* size){
+VOID* File::ReadData(UINTN* size){
 	EFI_GUID guid = EFI_SIMPLE_FILE_SYSTEM_PROTOCOL_GUID;
 	EFI_HANDLE* handles = nullptr;
 	UINTN count = 0;
@@ -71,8 +71,53 @@ VOID* File::Read(UINTN* size){
 
 }
 
+CHAR8* File::Read(UINTN* size){
+	const auto wide_string_data = ReadWide(size);
+	auto sting_data = new CHAR8[*size]; // Most likely memory leak here
+
+	for(int i = 0; i < *size / 2; i++){
+		sting_data[i] = static_cast<char>(wide_string_data[i]);
+	}
+
+	return sting_data;
+}
+
+CHAR8* File::Read(){
+	UINTN size = 0;
+	return Read(&size);
+}
+
+CHAR16* File::ReadWide(UINTN* size){
+	VOID* data = ReadData(size);
+
+	const auto wide_string_data = static_cast<CHAR16*>(data);
+
+	return wide_string_data;
+}
+
+CHAR16* File::ReadWide(){
+	UINTN size = 0;
+	return ReadWide(&size);
+}
+
+VOID File::Write(CHAR8* data, UINTN size){
+	auto wide_data = new CHAR16[size];
+
+	for(int i = 0; i < size; i++){
+		wide_data[i] = data[i];
+	}
+
+	WriteWide(wide_data, size * 2);
+
+	delete[] wide_data;
+}
+
+VOID File::WriteWide(CHAR16* data, UINTN size){
+	WriteData((VOID*)data, size);
+}
+
 //This works half of the time. Do not use
-VOID File::Write(VOID* data, UINTN size){
+VOID File::WriteData(VOID* data, UINTN size){
 	EFI_GUID guid = EFI_SIMPLE_FILE_SYSTEM_PROTOCOL_GUID;
 	EFI_HANDLE* handles = nullptr;
 	UINTN count = 0;
@@ -100,8 +145,6 @@ VOID File::Write(VOID* data, UINTN size){
 	if (file == nullptr)
 		return;
 
-
-
 	if(EFI_ERROR(file->Write(file, &size, data))){
 		Print((CHAR16*)L"Failed to write\n");
 	}
@@ -111,7 +154,3 @@ VOID File::Write(VOID* data, UINTN size){
 
 }
 
-BOOLEAN File::Exists()
-{
-	return BOOLEAN();
-}

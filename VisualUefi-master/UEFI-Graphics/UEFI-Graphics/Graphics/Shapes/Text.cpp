@@ -11,8 +11,8 @@ Text::Text(INTN x, INTN y, UINTN scale, Color color, CHAR8* text, CHAR16* font_n
 
 	File f(font_name);
 	UINTN size;
-	const auto data = f.Read(&size);
-	font_data_ = static_cast<unsigned char*>(data);
+	const auto data = f.ReadWide(&size);
+	font_data_ = reinterpret_cast<unsigned char*>(data);
 
 	if(size == 0){
 		return;
@@ -50,8 +50,8 @@ unsigned char Text::DrawGlyph(const Graphics& g, const char ch, UINTN x_pos, UIN
 
 	for (int y = 0; y < height_; y++){
 		for (int x = 0; x < width; x++){
-			const int fontAlpha = 1 - glyph[width * y + x] / 255; // Normalize the alpha
-			if (fontAlpha == 1) {
+			const int font_alpha = 1 - glyph[width * y + x] / 255; // Normalize the alpha
+			if (font_alpha == 1) {
 				g.DrawRectangle(x_pos + x * scale, y_pos + y * scale, scale, scale, Color::WHITE);
 			}
 		}
