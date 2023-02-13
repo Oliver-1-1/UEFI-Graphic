@@ -116,7 +116,6 @@ VOID File::WriteWide(CHAR16* data, UINTN size){
 	WriteData((VOID*)data, size);
 }
 
-//This works half of the time. Do not use
 VOID File::WriteData(VOID* data, UINTN size){
 	EFI_GUID guid = EFI_SIMPLE_FILE_SYSTEM_PROTOCOL_GUID;
 	EFI_HANDLE* handles = nullptr;

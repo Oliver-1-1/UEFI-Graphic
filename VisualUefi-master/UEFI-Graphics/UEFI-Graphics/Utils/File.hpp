@@ -1,5 +1,5 @@
 #pragma once
-#include "../General.h"
+#include "../General.hpp"
 
 //Does not automatically create the file if it does not exist!
 class File{

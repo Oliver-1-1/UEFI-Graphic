@@ -1,7 +1,8 @@
 #pragma once
 
 #define CAPI extern "C"
-#define printf(text) Print((const CHAR16*)text);
+//#define printf(text) Print((const CHAR16*)text);
+
 
 #include <IndustryStandard/SmBios.h>
 #include <IndustryStandard/Usb.h>

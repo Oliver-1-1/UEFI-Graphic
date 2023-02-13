@@ -16,7 +16,10 @@ VOID Graphics::DrawRectangle(INTN x, INTN y, UINTN width, UINTN height, Color co
 Graphics::Graphics(UINTN screen_x_size, UINTN screen_y_size) : oldx_(screen_x_size / 2), oldy_(screen_y_size / 2), screen_x_size_(screen_x_size), screen_y_size_(screen_y_size) {
 	const EFI_STATUS st = gBS->LocateProtocol(&gEfiGraphicsOutputProtocolGuid, NULL, reinterpret_cast<void**>(&gop_));
 	if (EFI_ERROR(st)) {
-		printf(L"Could not find protocol graph.\n");
+		#ifdef DEBUG
+			Print((CHAR16*)L"Could not find protocol graph.\n");
+		#endif
+
 		return;
 	}
 	gop_->SetMode(gop_, GetProperGraphicsMode(screen_x_size, screen_y_size)); // Get the right mode for the right res. Its like settings on different resolutions.
@@ -25,11 +28,16 @@ Graphics::Graphics(UINTN screen_x_size, UINTN screen_y_size) : oldx_(screen_x_si
 
 VOID Graphics::DrawPixel(INTN x, INTN y, Color color) const{
 	if (x > screen_x_size_ || x < 0) {
-		//printf(L"Too large writing buffer in DrawRectangle. X\n");
+		#ifdef DEBUG
+			Print((CHAR16*)L"Too large writing buffer in DrawRectangle. X\n");
+		#endif
 		return;
 	}
 	if (y > screen_y_size_ || y < 0) {
-		//printf(L"Too large writing buffer in DrawRectangle. Y\n");
+		#ifdef DEBUG
+			Print((CHAR16*)L"Too large writing buffer in DrawRectangle. Y\n");
+		#endif
+
 		return;
 	}
 	blt_buffer_[screen_x_size_ * y + x] = EFI_GRAPHICS_OUTPUT_BLT_PIXEL{ color.Get().Blue, color.Get().Green, color.Get().Red, color.Get().Reserved };
@@ -51,7 +59,10 @@ UINT32 Graphics::GetProperGraphicsMode(const UINTN horizontal_resolution, const 
 			return i;
 		}
 	}
-	printf(L"Could not find graph mode.\n");
+
+	#ifdef DEBUG
+		Print((CHAR16*)L"Could not find graph mode.\n");
+	#endif
 
 	return 0;
 }

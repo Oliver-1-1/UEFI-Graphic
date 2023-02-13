@@ -1,6 +1,6 @@
 #pragma once
 #include "Color.hpp"
-#include "../General.h"
+#include "../General.hpp"
 
 extern "C" {
 	#include <Uefi.h>
