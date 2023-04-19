@@ -2,6 +2,8 @@
 UEFI-Graphic brings graphics to UEFI in a simple way and it is written in C++. 
 Visual-efi is used for development environment
 
+https://github.com/ZeptaRev/UEFI-Graphic
+
 The project will support:
 1. Basic shapes                // Done
 2. Basic text                  // Done
